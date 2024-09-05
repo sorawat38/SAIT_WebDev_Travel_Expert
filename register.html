@@ -1,11 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
 </head>
+
 <body>
-    
+    <div>
+        <h1>Register here</h1>
+        <form action="register.php">
+            <label for="fname">First Name:</label>
+            <input type="text" name="fname" id="fname"><br><br>
+            <label for="lname">Last Name:</label>
+            <input type="text" name="lname" id="lname"><br><br>
+            <label for="phone_number">Phone Number:</label>
+            <input type="tel" name="phone_number" id="phone_number"><br><br>
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email"><br><br>
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </form>
+    </div>
 </body>
+
 </html>
