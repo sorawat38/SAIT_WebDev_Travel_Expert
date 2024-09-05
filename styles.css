@@ -1,0 +1,18 @@
+main {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.home_content{
+    border: solid grey;
+    border-radius: 10px;
+    padding: 20px;
+}
+.navigate {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
