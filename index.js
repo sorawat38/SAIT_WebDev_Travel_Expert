@@ -27,6 +27,14 @@ if (window.location.pathname === '/index.html') {
 
 } else if (window.location.pathname === '/register.html') {
     document.getElementById("registerForm").addEventListener("submit", confirmSubmission);
+    document.querySelectorAll('input').forEach(item => {
+        item.addEventListener('focus', function () {
+            showHint(this.id + '-' + 'hint')
+        })
+        item.addEventListener('focusout', function () {
+            hideHint(this.id + '-' + 'hint')
+        })
+    })
 } else if (window.location.pathname === '/contact.html') {
 
 }
@@ -44,3 +52,14 @@ function confirmSubmission(e) {
     alert(text);
 }
 
+function showHint(className) {
+    document.querySelectorAll(`.${className}`).forEach(item => {
+        item.style.display = 'block';
+    })
+}
+
+function hideHint(className) {
+    document.querySelectorAll(`.${className}`).forEach(item => {
+        item.style.display = 'none';
+    })
+}

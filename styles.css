@@ -13,3 +13,8 @@
 .navigate {
   margin-top: 50px;
 }
+
+.hint {
+  /* hidden by default */
+  display: none;
+}
