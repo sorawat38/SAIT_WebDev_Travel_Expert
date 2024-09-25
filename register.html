@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
         <div class="container-fluid">
             <a class="navbar-brand" href="#">Thai Smile Travel</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
@@ -33,21 +33,39 @@
             </div>
         </div>
     </nav>
-    <div>
-        <h1>Register here</h1>
-        <form action="register.php">
-            <label for="fname">First Name:</label>
-            <input type="text" name="fname" id="fname"><br><br>
-            <label for="lname">Last Name:</label>
-            <input type="text" name="lname" id="lname"><br><br>
-            <label for="phone_number">Phone Number:</label>
-            <input type="tel" name="phone_number" id="phone_number"><br><br>
-            <label for="email">Email:</label>
-            <input type="email" name="email" id="email"><br><br>
-            <input type="submit" value="Submit">
-            <input type="reset" value="Reset">
+    <main>
+        <form>
+            <div class="mb-3">
+                <label for="fname" class="form-label">First Name</label>
+                <input type="text" class="form-control" id="fname">
+            </div>
+            <div class="mb-3">
+                <label for="lname" class="form-label">Last Name</label>
+                <input type="text" class="form-control" id="lname">
+            </div>
+            <!-- address -->
+            <div class="mb-3">
+                <label for="address" class="form-label">Address</label>
+                <input type="text" class="form-control" id="address">
+            </div>
+            <!-- city -->
+            <div class="mb-3">
+                <label for="city" class="form-label">City</label>
+                <input type="text" class="form-control" id="city">
+            </div>
+            <!-- province -->
+            <div class="mb-3">
+                <label for="province" class="form-label">Province</label>
+                <input type="text" class="form-control" id="province">
+            </div>
+            <!-- postal code -->
+            <div class="mb-3">
+                <label for="postalcode" class="form-label">Postal Code</label>
+                <input type="text" class="form-control" id="postalcode">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
         </form>
-    </div>
+    </main>
 </body>
 
 </html>
