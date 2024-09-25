@@ -1,3 +1,12 @@
+/**
+ * @file index.js
+ * @description An individual assignment of travel agency
+ * 
+ * @version 1.0.0
+ * @date 2024-09-24
+ * @author Sorawat Tanthikun
+ * *
+ */
 
 // main binding event listener
 if (window.location.pathname === '/index.html') {
