@@ -26,7 +26,7 @@ if (window.location.pathname === '/index.html') {
     }
 
 } else if (window.location.pathname === '/register.html') {
-    document.getElementById("registerForm").addEventListener("submit", confirmSubmission)
+    document.getElementById("registerForm").addEventListener("submit", confirmSubmission);
 } else if (window.location.pathname === '/contact.html') {
 
 }
