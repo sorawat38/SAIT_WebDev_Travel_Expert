@@ -23,6 +23,7 @@ if (window.location.pathname === '/index.html') {
         imgElement.width = 500;
         imgElement.src = image;
         imgElement.classList.add('image');
+        imgElement.style.cursor = 'pointer';
         divElement.append(imgElement);
         travelImgDiv.appendChild(divElement);
     });
