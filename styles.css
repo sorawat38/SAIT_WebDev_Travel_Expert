@@ -1,15 +1,21 @@
-.main-age {
+/* .main-age {
   display: flex;
   height: 100vh;
   align-items: center;
   justify-content: center;
-}
+} */
 
-.home-content {
+/* .home-content {
   border: solid grey;
   border-radius: 10px;
   padding: 20px;
+} */
+
+.image {
+  object-fit: cover;
+  height: 600px; /* Maintain aspect ratio */
 }
+
 .navigate {
   margin-top: 50px;
 }

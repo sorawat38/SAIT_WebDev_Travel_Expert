@@ -16,19 +16,24 @@ const websiteLink = ['https://www.lonelyplanet.com/thailand/bangkok',
 // main binding event listener
 if (window.location.pathname === '/index.html' || window.location.pathname === '/') {
     let travelImgDiv = document.getElementById("travelImages");
-    images.forEach((image) => {
+    images.forEach((image, idx) => {
         let imgElement = document.createElement('img');
         let divElement = document.createElement('div');
-        imgElement.height = 200;
-        imgElement.width = 500;
         imgElement.src = image;
         imgElement.classList.add('image');
+        imgElement.classList.add('d-block');
+        imgElement.classList.add('w-100');
         imgElement.style.cursor = 'pointer';
+
+        divElement.classList.add('carousel-item');
+        if (idx === 0) {
+            divElement.classList.add('active');
+        }
         divElement.append(imgElement);
         travelImgDiv.appendChild(divElement);
     });
 
-    let imgClass = document.querySelectorAll('.image')
+    let imgClass = document.querySelectorAll('.carousel-item')
     for (let i = 0; i < imgClass.length; i++) {
         let descriptionNode = document.createElement('p');
         descriptionNode.innerHTML = descriptions[i];
