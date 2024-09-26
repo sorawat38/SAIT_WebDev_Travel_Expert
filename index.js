@@ -64,7 +64,7 @@ if (window.location.pathname === '/index.html' || window.location.pathname === '
 
 }
 
-// function
+// *********************************************** FUNCTION ***********************************************
 function confirmSubmission(e) {
     e.preventDefault();
 
@@ -133,7 +133,7 @@ function addValidateMessage(targetHint, message) {
     return
 }
 
-// this function is not necessary of we use proper format of id
+// this function is not necessary if we use proper format of id
 function mapIdToMessage(id) {
     switch (id) {
         case 'fname':
@@ -150,3 +150,5 @@ function mapIdToMessage(id) {
             return "Postal Code"
     }
 }
+
+// ********************************************************************************************************
