@@ -31,6 +31,7 @@ if (window.location.pathname === '/index.html') {
     for (let i = 0; i < imgClass.length; i++) {
         let descriptionNode = document.createElement('p');
         descriptionNode.innerHTML = descriptions[i];
+        descriptionNode.classList.add('tooltiptext')
         imgClass[i].addEventListener('mouseover', function () {
             imgClass[i].parentElement.appendChild(descriptionNode)
         })
