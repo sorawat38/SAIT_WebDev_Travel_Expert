@@ -7,6 +7,12 @@
  * @author Sorawat Tanthikun
  */
 
+const websiteLink = ['https://www.tripadvisor.ca/Attractions-g293916-Activities-Bangkok.html',
+    'https://www.tripadvisor.ca/Tourism-g293917-Chiang_Mai-Vacations.html',
+    'https://www.tripadvisor.ca/Tourism-g293920-Phuket-Vacations.html',
+    'https://www.tripadvisor.ca/Attraction_Review-g303902-d317729-Reviews-Damnoen_Saduak_Floating_Market-Damnoen_Saduak_Ratchaburi_Province.html',
+];
+
 // main binding event listener
 if (window.location.pathname === '/index.html') {
     let travelImgDiv = document.getElementById("travelImages");
