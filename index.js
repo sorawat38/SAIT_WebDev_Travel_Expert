@@ -13,7 +13,7 @@ const websiteLink = ['https://www.lonelyplanet.com/thailand/bangkok',
     'https://www.tripadvisor.ca/Attraction_Review-g303902-d317729-Reviews-Damnoen_Saduak_Floating_Market-Damnoen_Saduak_Ratchaburi_Province.html',
 ];
 
-// main binding event listener
+// ******************************************** EVENT LISENTER ********************************************
 if (window.location.pathname === '/index.html' || window.location.pathname === '/') {
     let travelImgDiv = document.getElementById("travelImages");
     images.forEach((image, idx) => {
@@ -63,7 +63,7 @@ if (window.location.pathname === '/index.html' || window.location.pathname === '
 } else if (window.location.pathname === '/contact.html') {
 
 }
-
+// ********************************************************************************************************
 // *********************************************** FUNCTION ***********************************************
 function confirmSubmission(e) {
     e.preventDefault();
