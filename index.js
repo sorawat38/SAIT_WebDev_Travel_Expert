@@ -14,7 +14,7 @@ const websiteLink = ['https://www.lonelyplanet.com/thailand/bangkok',
 ];
 
 // main binding event listener
-if (window.location.pathname === '/index.html') {
+if (window.location.pathname === '/index.html' || window.location.pathname === '/') {
     let travelImgDiv = document.getElementById("travelImages");
     images.forEach((image) => {
         let imgElement = document.createElement('img');
