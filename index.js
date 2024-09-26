@@ -46,6 +46,7 @@ if (window.location.pathname === '/index.html') {
 
 } else if (window.location.pathname === '/register.html') {
     document.getElementById('registerForm').addEventListener('submit', confirmSubmission);
+    document.getElementById('registerForm').addEventListener('reset', () => document.querySelectorAll('.error-validation').forEach((item) => item.remove()));
     document.querySelectorAll('input').forEach(item => {
         item.addEventListener('focus', function () {
             showHint(this.id + '-' + 'hint')
