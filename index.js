@@ -62,16 +62,11 @@ if (window.location.pathname === '/index.html') {
 function confirmSubmission(e) {
     e.preventDefault();
 
-    // validate form
-    validateForm(e.target);
-
-    // let text;
-    // if (confirm("Are you sure to submit") == true) {
-    //     text = "You pressed OK!";
-    // } else {
-    //     text = "You canceled!";
-    // }
-    // alert(text);
+    if (confirm("Are you sure to submit") == true) {
+        text = "You pressed OK!";
+        // validate form
+        validateForm(e.target);
+    }
 }
 
 function showHint(className) {
