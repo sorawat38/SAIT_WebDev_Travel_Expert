@@ -7,7 +7,7 @@
  * @author Sorawat Tanthikun
  */
 
-const websiteLink = ['https://www.tripadvisor.ca/Attractions-g293916-Activities-Bangkok.html',
+const websiteLink = ['https://www.lonelyplanet.com/thailand/bangkok',
     'https://www.tripadvisor.ca/Tourism-g293917-Chiang_Mai-Vacations.html',
     'https://www.tripadvisor.ca/Tourism-g293920-Phuket-Vacations.html',
     'https://www.tripadvisor.ca/Attraction_Review-g303902-d317729-Reviews-Damnoen_Saduak_Floating_Market-Damnoen_Saduak_Ratchaburi_Province.html',
@@ -36,6 +36,9 @@ if (window.location.pathname === '/index.html') {
         })
         imgClass[i].addEventListener('mouseout', function () {
             imgClass[i].parentElement.removeChild(descriptionNode);
+        })
+        imgClass[i].addEventListener('click', function () {
+            redirectToNewSite(i);
         })
     }
 
@@ -76,4 +79,11 @@ function hideHint(className) {
     document.querySelectorAll(`.${className}`).forEach(item => {
         item.style.display = 'none';
     })
+}
+
+function redirectToNewSite(index) {
+    var newWindow = window.open(websiteLink[index], "_blank	", "width=800,height=700");
+    setTimeout(function () {
+        newWindow.close();
+    }, 10000)
 }
