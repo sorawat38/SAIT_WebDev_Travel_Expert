@@ -1,15 +1,7 @@
-/* .main-age {
-  display: flex;
-  height: 100vh;
-  align-items: center;
-  justify-content: center;
-} */
-
-/* .home-content {
-  border: solid grey;
-  border-radius: 10px;
-  padding: 20px;
-} */
+.navigate {
+  text-decoration: none;
+  color: black;
+}
 
 .image {
   object-fit: cover;
