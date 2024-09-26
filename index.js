@@ -45,7 +45,7 @@ if (window.location.pathname === '/index.html') {
     }
 
 } else if (window.location.pathname === '/register.html') {
-    document.getElementById("registerForm").addEventListener("submit", confirmSubmission);
+    document.getElementById('registerForm').addEventListener('submit', confirmSubmission);
     document.querySelectorAll('input').forEach(item => {
         item.addEventListener('focus', function () {
             showHint(this.id + '-' + 'hint')
@@ -62,13 +62,16 @@ if (window.location.pathname === '/index.html') {
 function confirmSubmission(e) {
     e.preventDefault();
 
-    let text;
-    if (confirm("Are you sure to submit") == true) {
-        text = "You pressed OK!";
-    } else {
-        text = "You canceled!";
-    }
-    alert(text);
+    // validate form
+    validateForm(e.target);
+
+    // let text;
+    // if (confirm("Are you sure to submit") == true) {
+    //     text = "You pressed OK!";
+    // } else {
+    //     text = "You canceled!";
+    // }
+    // alert(text);
 }
 
 function showHint(className) {
@@ -88,4 +91,61 @@ function redirectToNewSite(index) {
     setTimeout(function () {
         newWindow.close();
     }, 10000)
+}
+
+function validateForm(form) {
+    for (const input of form.elements) {
+        if (input.type !== 'submit' && input.type !== 'reset') {
+
+            // select first hint that found
+            let targetHint = document.querySelector('.' + input.id + '-' + 'hint')
+
+            if (input.value.trim() === "" || input.value === undefined) {
+                let message = `${mapIdToMessage(input.id)} must not empty`
+                addValidateMessage(targetHint, message);
+                input.focus();
+            } else {
+                if (targetHint.previousElementSibling && targetHint.previousElementSibling.tagName === 'P') {
+                    targetHint.previousElementSibling.remove();
+                }
+            }
+        }
+    }
+}
+
+
+function addValidateMessage(targetHint, message) {
+
+    if (targetHint.previousElementSibling === null) { // prevent insert duplicate
+        // create new element
+        let pNode = document.createElement("p");
+        let textNode = document.createTextNode(message)
+        pNode.appendChild(textNode);
+
+        // style <p> tag
+        pNode.classList.add('text-danger');
+        pNode.classList.add('error-validation');
+        // add before it
+        targetHint.before(pNode);
+    }
+
+    return
+}
+
+// this function is not necessary of we use proper format of id
+function mapIdToMessage(id) {
+    switch (id) {
+        case 'fname':
+            return "First Name"
+        case 'lname':
+            return "Last Name"
+        case 'address':
+            return "Address"
+        case 'city':
+            return "City"
+        case 'province':
+            return "Province"
+        case 'postalcode':
+            return "Postal Code"
+    }
 }
