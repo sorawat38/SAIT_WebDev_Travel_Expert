@@ -88,10 +88,31 @@ function hideHint(className) {
 }
 
 function redirectToNewSite(index) {
-    var newWindow = window.open(websiteLink[index], "_blank	", "width=800,height=700");
-    setTimeout(function () {
-        newWindow.close();
-    }, 10000)
+    var newWindow = window.open("", "_blank	", "width=800,height=700");
+    newWindow.document.write(`
+    <html>
+        <head>
+        </head>
+        <body>
+            <div style="display: flex; flex-direction:column; justify-content: center; align-items: center; height: 100vh;">
+                <a href="${websiteLink[index]}" id="new-link" style="font-size: 70px;">Go to Blog</a>
+                <p style="font-size: 30px;">If not click anything, the window will close</p>
+            </div>
+            <script>
+                let isNav = false;
+                document.getElementById("new-link").addEventListener("click", function () {
+                    isNav = true;
+                });
+
+                setTimeout(function () {
+                    if (!isNav) {
+                    window.close();
+                    }
+                }, 10000);
+            </script>
+        </body>
+    </html>
+    `);
 }
 
 function validateForm(form) {
