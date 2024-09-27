@@ -96,19 +96,23 @@ function redirectToNewSite(index) {
         <body>
             <div style="display: flex; flex-direction:column; justify-content: center; align-items: center; height: 100vh;">
                 <a href="${websiteLink[index]}" id="new-link" style="font-size: 70px;">Go to Blog</a>
-                <p style="font-size: 30px;">If not click anything, the window will close</p>
+                <p style="font-size: 30px;">If not click anything, the window will close in
+                    <span id="counter">5</span> second(s)
+                </p>
             </div>
             <script>
+                let count = parseInt(document.getElementById("counter").innerHTML);
                 let isNav = false;
                 document.getElementById("new-link").addEventListener("click", function () {
                     isNav = true;
                 });
-
-                setTimeout(function () {
-                    if (!isNav) {
-                    window.close();
-                    }
-                }, 10000);
+                var interval = setInterval(function () {
+                    document.getElementById('counter').innerHTML = --count;
+                        if (count <= 0 && !isNav) {
+                            clearInterval(interval);
+                            window.close();
+                        }
+                }, 1000);
             </script>
         </body>
     </html>
